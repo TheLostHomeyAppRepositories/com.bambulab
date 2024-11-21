@@ -126,6 +126,19 @@
   </div>
 
   <script type="text/javascript">
+    const printStates = {
+      "FAILED": "Failed",
+      "FINISH": "Finished",
+      "IDLE": "Idle",
+      "INIT": "Initializing...",
+      "OFFLINE": "Offline",
+      "PAUSE": "Paused",
+      "PREPARE": "Preparing...",
+      "RUNNING": "Running",
+      "SLICING": "Slicing...",
+      "UNKNOWN": "Unknown"
+    };
+
     function onHomeyReady(Homey) {
       let currentJobId = null;
 
@@ -134,12 +147,12 @@
         Homey.api('GET', `/status?deviceId=${device.deviceId}`, {})
           .then(({
             progressPercentage,
-            progressFilename,
-            progressStatus,
+            printState,
             jobId,
+            jobName,
           }) => {
-            document.getElementById('progress-text-filename').innerText = progressFilename;
-            document.getElementById('progress-text-status').innerText = progressStatus;
+            document.getElementById('progress-text-filename').innerText = jobName;
+            document.getElementById('progress-text-status').innerText = printStates[printState] ?? printState;
             document.getElementById('progress-text-percentage').innerText = `${progressPercentage}%`;
             document.getElementById('progress-bar-fill').style.width = `${progressPercentage}%`;
 

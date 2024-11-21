@@ -11,9 +11,9 @@ module.exports = {
 
     return {
       progressPercentage: device.getCapabilityValue('bambu_number.progress'),
-      progressFilename: 'Todo.3mf',
-      progressStatus: 'To Do',
       jobId: device.jobId,
+      jobName: device.jobName,
+      printState: device.printState,
     };
   },
 
