@@ -1,0 +1,142 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.bambulab",
+  "version": "1.0.0",
+  "compatibility": ">=12.1.0",
+  "sdk": 3,
+  "brandColor": "#45A142",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "name": {
+    "en": "Bambu Lab"
+  },
+  "description": {
+    "en": "Unleash Your Creativity with Bambu Lab 3D Printers"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Emile Nijssen",
+    "email": "emile@athom.nl"
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "3D Printer"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/cloud/assets/images/small.png",
+        "large": "/drivers/cloud/assets/images/large.png",
+        "xlarge": "/drivers/cloud/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "login_email"
+        },
+        {
+          "id": "login_code",
+          "template": "pincode",
+          "options": {
+            "title": "Enter the Pincode",
+            "hint": "A pincode has been sent to your email.",
+            "length": 6
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "cloud",
+      "settings": [
+        {
+          "id": "deviceId",
+          "type": "label",
+          "label": "Device ID",
+          "value": "n/a"
+        },
+        {
+          "id": "modelName",
+          "type": "label",
+          "label": "Model Name",
+          "value": "n/a"
+        },
+        {
+          "id": "productName",
+          "type": "label",
+          "label": "Product Name",
+          "value": "n/a"
+        }
+      ]
+    }
+  ],
+  "widgets": {
+    "status": {
+      "name": {
+        "en": "3D Printer Status"
+      },
+      "height": 202,
+      "settings": [
+        {
+          "id": "device",
+          "type": "autocomplete",
+          "title": {
+            "en": "Device"
+          }
+        }
+      ],
+      "api": {
+        "getStatus": {
+          "method": "GET",
+          "path": "/status"
+        },
+        "getImage": {
+          "method": "GET",
+          "path": "/image"
+        }
+      },
+      "id": "status"
+    }
+  },
+  "capabilities": {
+    "bambu_number": {
+      "type": "number",
+      "title": "Bambu Number",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "bambu_string": {
+      "type": "string",
+      "title": "Bambu String",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": {
+    "en": "3D Printer"
+  },
+  "class": "other",
+  "capabilities": [],
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "login_email"
+    },
+    {
+      "id": "login_code",
+      "template": "pincode",
+      "options": {
+        "title": "Enter the Pincode",
+        "hint": "A pincode has been sent to your email.",
+        "length": 6
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "deviceId",
+    "type": "label",
+    "label": "Device ID",
+    "value": "n/a"
+  },
+  {
+    "id": "modelName",
+    "type": "label",
+    "label": "Model Name",
+    "value": "n/a"
+  },
+  {
+    "id": "productName",
+    "type": "label",
+    "label": "Product Name",
+    "value": "n/a"
+  }
+]
