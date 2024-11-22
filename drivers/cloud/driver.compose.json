@@ -40,5 +40,19 @@
       "id": "add_devices",
       "template": "add_devices"
     }
+  ],
+  "repair": [
+    {
+      "id": "login_email"
+    },
+    {
+      "id": "login_code",
+      "template": "pincode",
+      "options": {
+        "title": "Enter the Pincode",
+        "hint": "A pincode has been sent to your email.",
+        "length": 6
+      }
+    }
   ]
 }
