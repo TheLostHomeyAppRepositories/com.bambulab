@@ -3,7 +3,12 @@
     "en": "3D Printer"
   },
   "class": "other",
-  "capabilities": [],
+  "capabilities": [
+    "bambu_print_speed",
+    "bambu_print_layers",
+    "bambu_progress_percentage",
+    "bambu_progress_time_remaining"
+  ],
   "platforms": [
     "local",
     "cloud"

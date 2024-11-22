@@ -1,0 +1,75 @@
+{
+  "triggers": [
+    {
+      "id": "print_state_finish",
+      "title": "The print has finished"
+    },
+    {
+      "id": "print_state_failed",
+      "title": "The print has failed"
+    },
+    {
+      "id": "print_state_paused",
+      "title": "The print has been paused"
+    },
+    {
+      "id": "print_state_running",
+      "title": "The print has been started or resumed"
+    }
+  ],
+  "actions": [
+    {
+      "id": "pause",
+      "title": "Pause"
+    },
+    {
+      "id": "resume",
+      "title": "Resume"
+    },
+    {
+      "id": "stop",
+      "title": "Stop"
+    },
+    {
+      "id": "set_chamber_light_on",
+      "title": "Turn the chamber light on"
+    },
+    {
+      "id": "set_chamber_light_off",
+      "title": "Turn the chamber light off"
+    },
+    {
+      "id": "set_print_speed",
+      "title": "Set the print speed",
+      "titleFormatted": "Set the print speed to [[speed]]",
+      "$filter": {
+        "capabilities": "bambu_print_speed"
+      },
+      "args": [
+        {
+          "name": "speed",
+          "title": "Speed",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "1",
+              "title": "Silent"
+            },
+            {
+              "id": "2",
+              "title": "Standard"
+            },
+            {
+              "id": "3",
+              "title": "Sport"
+            },
+            {
+              "id": "4",
+              "title": "Ludicrous"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

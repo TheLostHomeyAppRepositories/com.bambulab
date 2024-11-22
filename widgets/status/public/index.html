@@ -51,17 +51,6 @@
     as="image"
   />
 
-  <!-- <link
-    rel="preload"
-    href="./control-fan-on.svg"
-    as="image"
-  />
-  <link
-    rel="preload"
-    href="./control-fan-off.svg"
-    as="image"
-  /> -->
-
   <style>
     body {
       background-color: #1D1D24;
@@ -255,10 +244,6 @@
       id="controls-print-speed"
       class="control"
     ></div>
-    <!-- <div
-      id="controls-fan-speed"
-      class="control"
-    ></div> -->
   </div>
 
   <script type="text/javascript">
@@ -291,10 +276,10 @@
             lightChamberState,
             printSpeedState,
           }) => {
-            document.getElementById('progress-text-filename').innerText = jobName;
-            document.getElementById('progress-text-status').innerText = printStates[printState] ?? printState;
-            document.getElementById('progress-text-percentage').innerText = `${progressPercentage}%`;
-            document.getElementById('progress-bar-fill').style.width = `${progressPercentage}%`;
+            document.getElementById('progress-text-filename').innerText = jobName ?? ' ';
+            document.getElementById('progress-text-status').innerText = printStates[printState] ?? printState ?? ' ';
+            document.getElementById('progress-text-percentage').innerText = `${progressPercentage ?? 0}%`;
+            document.getElementById('progress-bar-fill').style.width = `${progressPercentage ?? 0}%`;
 
             document.getElementById('controls-pause').dataset.state = printState === 'PAUSE' ? 'pause' : '';
             document.getElementById('controls-light').dataset.state = lightChamberState ? 'on' : 'off';

@@ -26,7 +26,156 @@
   },
   "author": {
     "name": "Emile Nijssen",
-    "email": "emile@athom.nl"
+    "email": "emile@emile.nl"
+  },
+  "support": "mailto:emile@emile.nl",
+  "source": "https://github.com/WeeJeWel/com.bambulab",
+  "contributors": {
+    "developers": [
+      {
+        "name": "Bas van der Ploeg"
+      }
+    ]
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "print_state_finish",
+        "title": "The print has finished",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "print_state_failed",
+        "title": "The print has failed",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "print_state_paused",
+        "title": "The print has been paused",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "print_state_running",
+        "title": "The print has been started or resumed",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "pause",
+        "title": "Pause",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "resume",
+        "title": "Resume",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "stop",
+        "title": "Stop",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "set_chamber_light_on",
+        "title": "Turn the chamber light on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "set_chamber_light_off",
+        "title": "Turn the chamber light off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "set_print_speed",
+        "title": "Set the print speed",
+        "titleFormatted": "Set the print speed to [[speed]]",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud&capabilities=bambu_print_speed"
+          },
+          {
+            "name": "speed",
+            "title": "Speed",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": "Silent"
+              },
+              {
+                "id": "2",
+                "title": "Standard"
+              },
+              {
+                "id": "3",
+                "title": "Sport"
+              },
+              {
+                "id": "4",
+                "title": "Ludicrous"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "drivers": [
     {
@@ -34,7 +183,12 @@
         "en": "3D Printer"
       },
       "class": "other",
-      "capabilities": [],
+      "capabilities": [
+        "bambu_print_speed",
+        "bambu_print_layers",
+        "bambu_progress_percentage",
+        "bambu_progress_time_remaining"
+      ],
       "platforms": [
         "local",
         "cloud"
@@ -158,13 +312,6 @@
     }
   },
   "capabilities": {
-    "bambu_number": {
-      "type": "number",
-      "title": "Bambu Number",
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor"
-    },
     "bambu_print_layers": {
       "type": "string",
       "title": "Print Layers",
@@ -213,13 +360,6 @@
       "setable": false,
       "title": "Time Remaining",
       "icon": "/assets/icons/bambu_progress_time_remaining.svg"
-    },
-    "bambu_string": {
-      "type": "string",
-      "title": "Bambu String",
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor"
     }
   }
 }

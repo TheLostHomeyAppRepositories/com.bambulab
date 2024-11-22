@@ -25,6 +25,15 @@
   },
   "author": {
     "name": "Emile Nijssen",
-    "email": "emile@athom.nl"
+    "email": "emile@emile.nl"
+  },
+  "support": "mailto:emile@emile.nl",
+  "source": "https://github.com/WeeJeWel/com.bambulab",
+  "contributors": {
+    "developers": [
+      {
+        "name": "Bas van der Ploeg"
+      }
+    ]
   }
 }
