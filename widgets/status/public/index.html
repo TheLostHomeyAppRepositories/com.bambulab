@@ -162,6 +162,10 @@
       background-image: url(./control-pause.svg);
     }
 
+    #controls-pause[data-state="pause"] {
+      background-image: url(./control-resume.svg);
+    }
+
     #controls-stop {
       background-image: url(./control-stop.svg);
     }
@@ -292,6 +296,7 @@
             document.getElementById('progress-text-percentage').innerText = `${progressPercentage}%`;
             document.getElementById('progress-bar-fill').style.width = `${progressPercentage}%`;
 
+            document.getElementById('controls-pause').dataset.state = printState === 'PAUSE' ? 'pause' : '';
             document.getElementById('controls-light').dataset.state = lightChamberState ? 'on' : 'off';
             document.getElementById('controls-print-speed').dataset.state = printSpeedState;
 
@@ -317,7 +322,11 @@
 
       // Controls — Pause
       document.getElementById('controls-pause').addEventListener('click', () => {
-        Homey.api('POST', `/control/pause?deviceId=${deviceId}`, {}).catch(console.error);
+        if (document.getElementById('controls-pause').dataset.state === 'pause') {
+          Homey.api('POST', `/control/resume?deviceId=${deviceId}`, {}).catch(console.error);
+        } else {
+          Homey.api('POST', `/control/pause?deviceId=${deviceId}`, {}).catch(console.error);
+        }
       });
 
       // Controls — Stop
