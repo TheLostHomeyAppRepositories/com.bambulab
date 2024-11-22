@@ -1,9 +1,72 @@
 <html>
 
 <head>
+  <link
+    rel="preload"
+    href="./control-light-on.svg"
+    as="image"
+  />
+  <link
+    rel="preload"
+    href="./control-light-off.svg"
+    as="image"
+  />
+
+  <link
+    rel="preload"
+    href="./control-stop.svg"
+    as="image"
+  />
+
+  <link
+    rel="preload"
+    href="./control-pause.svg"
+    as="image"
+  />
+
+  <link
+    rel="preload"
+    href="./control-resume.svg"
+    as="image"
+  />
+
+  <link
+    rel="preload"
+    href="./control-speed-silent.svg"
+    as="image"
+  />
+  <link
+    rel="preload"
+    href="./control-speed-standard.svg"
+    as="image"
+  />
+  <link
+    rel="preload"
+    href="./control-speed-sport.svg"
+    as="image"
+  />
+  <link
+    rel="preload"
+    href="./control-speed-ludicrous.svg"
+    as="image"
+  />
+
+  <link
+    rel="preload"
+    href="./control-fan-on.svg"
+    as="image"
+  />
+  <link
+    rel="preload"
+    href="./control-fan-off.svg"
+    as="image"
+  />
+
   <style>
     body {
       background-color: #1D1D24;
+      cursor: default;
+      user-select: none;
     }
 
     #progress-text {
@@ -78,9 +141,63 @@
     }
 
     #controls>.control {
-      background-color: #44444A;
       height: 40px;
       border-radius: 10px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 24px 24px;
+      cursor: pointer;
+    }
+
+    #controls>.control:hover {
+      background-color: #505056;
+    }
+
+    #controls>.control,
+    #controls>.control:active {
+      background-color: #44444A;
+    }
+
+    #controls-pause {
+      background-image: url(./control-pause.svg);
+    }
+
+    #controls-stop {
+      background-image: url(./control-stop.svg);
+    }
+
+    #controls-light[data-state="on"] {
+      background-image: url(./control-light-on.svg);
+    }
+
+    #controls-light[data-state="off"] {
+      background-image: url(./control-light-off.svg);
+    }
+
+
+    #controls-print-speed[data-state="1"] {
+      background-image: url(./control-speed-silent.svg);
+    }
+
+    #controls-print-speed[data-state="2"] {
+      background-image: url(./control-speed-standard.svg);
+    }
+
+    #controls-print-speed[data-state="3"] {
+      background-image: url(./control-speed-sport.svg);
+    }
+
+    #controls-print-speed[data-state="4"] {
+      background-image: url(./control-speed-ludicrous.svg);
+    }
+
+
+    #controls-fan-speed[data-state="on"] {
+      background-image: url(./control-fan-on.svg);
+    }
+
+    #controls-fan-speed[data-state="off"] {
+      background-image: url(./control-fan-off.svg);
     }
   </style>
 </head>
@@ -116,11 +233,11 @@
       class="control"
     ></div>
     <div
-      id="controls-todo"
+      id="controls-print-speed"
       class="control"
     ></div>
     <div
-      id="controls-fan"
+      id="controls-fan-speed"
       class="control"
     ></div>
   </div>
@@ -142,22 +259,31 @@
     function onHomeyReady(Homey) {
       let currentJobId = null;
 
+      const { device } = Homey.getSettings();
+      const { deviceId } = device;
+
       function getStatus() {
-        const { device } = Homey.getSettings();
-        Homey.api('GET', `/status?deviceId=${device.deviceId}`, {})
+        Homey.api('GET', `/status?deviceId=${deviceId}`, {})
           .then(({
             progressPercentage,
             printState,
             jobId,
             jobName,
+            lightChamberState,
+            printSpeedState,
+            fanSpeedState,
           }) => {
             document.getElementById('progress-text-filename').innerText = jobName;
             document.getElementById('progress-text-status').innerText = printStates[printState] ?? printState;
             document.getElementById('progress-text-percentage').innerText = `${progressPercentage}%`;
             document.getElementById('progress-bar-fill').style.width = `${progressPercentage}%`;
 
+            document.getElementById('controls-light').dataset.state = lightChamberState ? 'on' : 'off';
+            document.getElementById('controls-print-speed').dataset.state = printSpeedState;
+            document.getElementById('controls-fan-speed').dataset.state = fanSpeedState ? 'on' : 'off';
+
             if (jobId !== currentJobId) {
-              Homey.api('GET', `/image?deviceId=${device.deviceId}`, {})
+              Homey.api('GET', `/image?deviceId=${deviceId}`, {})
                 .then(imageString => {
                   document.getElementById('progress-image').style.backgroundImage = `url(${imageString})`;
                   currentJobId = jobId;
@@ -170,6 +296,51 @@
             Homey.ready();
           });
       };
+
+      // Controls — Pause
+      document.getElementById('controls-pause').addEventListener('click', () => {
+        Homey.api('POST', `/control/pause?deviceId=${deviceId}`, {}).catch(console.error);
+      });
+
+      // Controls — Stop
+      document.getElementById('controls-stop').addEventListener('click', () => {
+        Homey.api('POST', `/control/stop?deviceId=${deviceId}`, {}).catch(console.error);
+      });
+
+      // Controls — Light
+      document.getElementById('controls-light').addEventListener('click', () => {
+        if (document.getElementById('controls-light').dataset.state === 'on') {
+          document.getElementById('controls-light').dataset.state = 'off';
+        } else {
+          document.getElementById('controls-light').dataset.state = 'on';
+        }
+
+        Homey.api('POST', `/control/light_chamber?deviceId=${deviceId}`, {
+          on: document.getElementById('controls-light').dataset.state === 'on',
+        }).catch(console.error);
+      });
+
+      // Controls — Print Speed
+      document.getElementById('controls-print-speed').addEventListener('click', () => {
+        document.getElementById('controls-print-speed').dataset.state = (parseInt(document.getElementById('controls-print-speed').dataset.state) % 4) + 1;
+
+        Homey.api('POST', `/control/print_speed?deviceId=${deviceId}`, {
+          speed: document.getElementById('controls-print-speed').dataset.state,
+        }).catch(console.error);
+      });
+
+      // Controls — Fan Speed
+      document.getElementById('controls-fan-speed').addEventListener('click', () => {
+        if (document.getElementById('controls-fan-speed').dataset.state === 'on') {
+          document.getElementById('controls-fan-speed').dataset.state = 'off';
+        } else {
+          document.getElementById('controls-fan-speed').dataset.state = 'on';
+        }
+
+        Homey.api('POST', `/control/fan_speed?deviceId=${deviceId}`, {
+          on: document.getElementById('controls-fan-speed').dataset.state === 'on',
+        }).catch(console.error);
+      });
 
       getStatus();
       setInterval(getStatus, 1000);

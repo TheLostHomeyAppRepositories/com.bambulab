@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bambu-Lab-3D-Printier" transform="translate(-34, -154)" fill="#FFFFFF">
+            <g id="Buttons" transform="translate(16, 146)">
+                <g id="icon" transform="translate(24.375, 12.875)">
+                    <path d="M1.5,0 L3,0 C3.82842712,-2.22044605e-16 4.5,0.671572875 4.5,1.5 L4.5,12.75 C4.5,13.5784271 3.82842712,14.25 3,14.25 L1.5,14.25 C0.671572875,14.25 0,13.5784271 0,12.75 L0,1.5 C0,0.671572875 0.671572875,0 1.5,0 Z M8.25,0 L9.75,0 C10.5784271,-2.22044605e-16 11.25,0.671572875 11.25,1.5 L11.25,12.75 C11.25,13.5784271 10.5784271,14.25 9.75,14.25 L8.25,14.25 C7.42157288,14.25 6.75,13.5784271 6.75,12.75 L6.75,1.5 C6.75,0.671572875 7.42157288,0 8.25,0 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

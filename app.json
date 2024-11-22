@@ -118,6 +118,30 @@
         "getImage": {
           "method": "GET",
           "path": "/image"
+        },
+        "setPrintPaused": {
+          "method": "POST",
+          "path": "/control/pause"
+        },
+        "setPrintResume": {
+          "method": "POST",
+          "path": "/control/resume"
+        },
+        "setPrintStop": {
+          "method": "POST",
+          "path": "/control/stop"
+        },
+        "setLightChamber": {
+          "method": "POST",
+          "path": "/control/light_chamber"
+        },
+        "setPrintSpeed": {
+          "method": "POST",
+          "path": "/control/print_speed"
+        },
+        "setFanSpeed": {
+          "method": "POST",
+          "path": "/control/fan_speed"
         }
       },
       "id": "status"
@@ -130,6 +154,30 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor"
+    },
+    "bambu_print_speed": {
+      "type": "enum",
+      "title": "Print Speed",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "1",
+          "title": "Silent"
+        },
+        {
+          "id": "2",
+          "title": "Standard"
+        },
+        {
+          "id": "3",
+          "title": "Sport"
+        },
+        {
+          "id": "4",
+          "title": "Ludicrous"
+        }
+      ]
     },
     "bambu_string": {
       "type": "string",

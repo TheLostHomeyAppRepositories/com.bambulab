@@ -20,6 +20,30 @@
     "getImage": {
       "method": "GET",
       "path": "/image"
+    },
+    "setPrintPaused": {
+      "method": "POST",
+      "path": "/control/pause"
+    },
+    "setPrintResume": {
+      "method": "POST",
+      "path": "/control/resume"
+    },
+    "setPrintStop": {
+      "method": "POST",
+      "path": "/control/stop"
+    },
+    "setLightChamber": {
+      "method": "POST",
+      "path": "/control/light_chamber"
+    },
+    "setPrintSpeed": {
+      "method": "POST",
+      "path": "/control/print_speed"
+    },
+    "setFanSpeed": {
+      "method": "POST",
+      "path": "/control/fan_speed"
     }
   }
 }

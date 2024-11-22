@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <defs>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bambu-Lab-3D-Printier" transform="translate(-34, -154)" fill="#FFFFFF">
+            <g id="Buttons" transform="translate(16, 146)">
+                <g id="icon" transform="translate(22.875, 12.125)">
+                    <path d="M13.2773743,6.19805647 L2.88708401,0.254833655 C1.9617641,-0.274447269 0.783004097,0.0473529545 0.254249861,0.97359457 C0.0876374734,1.26545668 0,1.59578995 0,1.93194246 L0,13.8183881 C0,14.8851879 0.86395154,15.75 1.92968977,15.75 C2.26550778,15.75 2.59551233,15.6622752 2.88708401,15.4954969 L13.2773743,9.55227407 C14.2026942,9.02299315 14.5241742,7.843059 13.9954199,6.91681738 C13.8244701,6.61735712 13.5765365,6.36917662 13.2773743,6.19805647 Z" id="Triangle" filter="url(#filter-1)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

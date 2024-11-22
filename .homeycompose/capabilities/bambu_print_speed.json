@@ -1,0 +1,24 @@
+{
+  "type": "enum",
+  "title": "Print Speed",
+  "getable": true,
+  "setable": true,
+  "values": [
+    {
+      "id": "1",
+      "title": "Silent"
+    },
+    {
+      "id": "2",
+      "title": "Standard"
+    },
+    {
+      "id": "3",
+      "title": "Sport"
+    },
+    {
+      "id": "4",
+      "title": "Ludicrous"
+    }
+  ]
+}
