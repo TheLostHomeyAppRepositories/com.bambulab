@@ -22,7 +22,6 @@ module.exports = {
       printState: device.printState,
       lightChamberState: device.getCapabilityValue('onoff.light_chamber'),
       printSpeedState: device.getCapabilityValue('bambu_print_speed'),
-      fanSpeedState: device.getCapabilityValue('onoff.fan_speed'),
     };
   },
 
@@ -68,15 +67,5 @@ module.exports = {
 
     await device.triggerCapabilityListener('bambu_print_speed', speed);
   },
-
-  async setFanSpeed({ homey, query, body }) {
-    const device = await getDevice({ homey, query });
-
-    const {
-      on,
-    } = body;
-
-    await device.triggerCapabilityListener('onoff.fan', on);
-  }
 
 };

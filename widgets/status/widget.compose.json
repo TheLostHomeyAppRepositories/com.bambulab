@@ -40,10 +40,6 @@
     "setPrintSpeed": {
       "method": "POST",
       "path": "/control/print_speed"
-    },
-    "setFanSpeed": {
-      "method": "POST",
-      "path": "/control/fan_speed"
     }
   }
 }
