@@ -16,7 +16,7 @@ module.exports = {
     const device = await getDevice({ homey, query });
 
     return {
-      progressPercentage: device.getCapabilityValue('bambu_number.progress'),
+      progressPercentage: device.getCapabilityValue('bambu_progress_percentage'),
       jobId: device.jobId,
       jobName: device.jobName,
       printState: device.printState,

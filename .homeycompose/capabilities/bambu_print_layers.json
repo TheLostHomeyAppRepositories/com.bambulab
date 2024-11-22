@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "title": "Print Layers",
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/icons/bambu_print_layers.svg"
+}

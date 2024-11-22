@@ -165,6 +165,13 @@
       "setable": false,
       "uiComponent": "sensor"
     },
+    "bambu_print_layers": {
+      "type": "string",
+      "title": "Print Layers",
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/icons/bambu_print_layers.svg"
+    },
     "bambu_print_speed": {
       "type": "enum",
       "title": "Print Speed",
@@ -187,7 +194,25 @@
           "id": "4",
           "title": "Ludicrous"
         }
-      ]
+      ],
+      "icon": "/assets/icons/bambu_print_speed.svg"
+    },
+    "bambu_progress_percentage": {
+      "type": "number",
+      "getable": true,
+      "setable": false,
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "title": "Print Progress",
+      "icon": "/assets/icons/bambu_print_progress.svg"
+    },
+    "bambu_progress_time_remaining": {
+      "type": "string",
+      "getable": true,
+      "setable": false,
+      "title": "Time Remaining",
+      "icon": "/assets/icons/bambu_progress_time_remaining.svg"
     },
     "bambu_string": {
       "type": "string",

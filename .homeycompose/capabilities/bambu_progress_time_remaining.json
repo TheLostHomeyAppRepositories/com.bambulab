@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "getable": true,
+  "setable": false,
+  "title": "Time Remaining",
+  "icon": "/assets/icons/bambu_progress_time_remaining.svg"
+}

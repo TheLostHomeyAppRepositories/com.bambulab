@@ -190,10 +190,34 @@
     #controls-print-speed[data-state="4"] {
       background-image: url(./control-speed-ludicrous.svg);
     }
+
+    #error {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    #error:empty {
+      display: none;
+    }
   </style>
 </head>
 
 <body class="homey-widget">
+
+  <div id="error"></div>
 
   <div id="progress-text">
     <div id="progress-text-percentage"></div>
@@ -279,8 +303,13 @@
                 })
                 .catch(console.error);
             }
+
+            document.getElementById('error').innerText = '';
           })
-          .catch(console.error)
+          .catch(err => {
+            console.error(err);
+            document.getElementById('error').innerText = `${err.message}`;
+          })
           .finally(() => {
             Homey.ready();
           });
