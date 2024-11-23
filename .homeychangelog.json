@@ -4,5 +4,8 @@
   },
   "1.0.1": {
     "en": "Fixed an issue in the widget, where the filename would not show."
+  },
+  "1.0.2": {
+    "en": "Fixed an issue where the filename would disappear in the widget."
   }
 }
