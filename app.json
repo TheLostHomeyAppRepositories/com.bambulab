@@ -280,6 +280,35 @@
     }
   ],
   "widgets": {
+    "ams": {
+      "name": {
+        "en": "AMS"
+      },
+      "height": 170,
+      "settings": [
+        {
+          "id": "device",
+          "type": "autocomplete",
+          "title": {
+            "en": "Device"
+          }
+        },
+        {
+          "id": "ams",
+          "type": "autocomplete",
+          "title": {
+            "en": "AMS"
+          }
+        }
+      ],
+      "api": {
+        "getStatus": {
+          "method": "GET",
+          "path": "/status"
+        }
+      },
+      "id": "ams"
+    },
     "status": {
       "name": {
         "en": "3D Printer Status"

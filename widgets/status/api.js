@@ -2,13 +2,7 @@
 
 async function getDevice({ homey, query }) {
   const { deviceId } = query;
-  const driver = homey.drivers.getDriver('cloud');
-  const device = driver.getDevices().find(device => device.getData().deviceId === deviceId);
-  if (!device) {
-    throw new Error('Device Not Found');
-  }
-
-  return device;
+  return homey.app.getDevice({ deviceId });
 }
 
 module.exports = {

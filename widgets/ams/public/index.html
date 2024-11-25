@@ -1,0 +1,282 @@
+<html>
+
+<head>
+
+  <style>
+    body {
+      background-color: #1D1D24;
+      cursor: default;
+      user-select: none;
+    }
+
+    #trays {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 96px;
+      margin-bottom: 16px;
+    }
+
+    #trays>.tray {
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #trays>.tray.is-active:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -5px;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      border: 2px solid #65C466;
+      border-radius: 14px;
+    }
+
+    #trays>.tray>.type {
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    #trays>.tray.is-light>.type {
+      color: black;
+    }
+
+    #sensors-wrap {
+      text-align: center;
+    }
+
+    #sensors {
+      display: inline-block;
+      margin: auto;
+      border-radius: 13px;
+      height: 26px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      padding: 0 10px;
+
+      flex-direction: row;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #35363E;
+    }
+
+    #sensors>.sensor {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #9A9A9F;
+    }
+
+    #sensors>.sensor>.icon {
+      display: block;
+      width: 18px;
+      height: 18px;
+      margin-right: 4px;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    #sensors>#sensor-temperature>.icon {
+      background-image: url('temperature.svg');
+    }
+
+    #sensors>#sensor-humidity>.icon {
+      background-image: url('humidity.svg');
+    }
+
+    #sensors>.sensor>.text {
+      font-size: 14px;
+      margin-top: 2px;
+      line-height: 18px;
+      font-weight: 500;
+      color: #9A9A9F;
+    }
+
+    #sensors>.sensor:first-child::after {
+      content: " ・ ";
+    }
+
+    #error {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    #error:empty {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="homey-widget">
+
+  <div id="error"></div>
+
+  <div id="trays">
+    <div
+      data-tray="0"
+      class="tray"
+    >
+      <div class="type"></div>
+    </div>
+
+    <div
+      data-tray="1"
+      class="tray is-active"
+    >
+      <div class="type"></div>
+    </div>
+
+    <div
+      data-tray="2"
+      class="tray"
+    >
+      <div class="type"></div>
+    </div>
+
+    <div
+      data-tray="3"
+      class="tray"
+    >
+      <div class="type"></div>
+    </div>
+  </div>
+
+  <div id="sensors-wrap">
+    <div id="sensors">
+      <div
+        id="sensor-humidity"
+        class="sensor"
+      >
+        <div class="icon"></div>
+        <div class="text"></div>
+      </div>
+      <div
+        id="sensor-temperature"
+        class="sensor"
+      >
+        <div class="icon"></div>
+        <div class="text"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function onHomeyReady(Homey) {
+      const {
+        device,
+        ams,
+      } = Homey.getSettings();
+      const { deviceId } = device;
+      const { amsId } = ams;
+
+      function getStatus() {
+        Homey.api('GET', `/status?deviceId=${deviceId}&amsId=${amsId}`, {})
+          .then(({
+            temperature,
+            humidity,
+            trays,
+            trayLoadedId,
+          }) => {
+            document.querySelector('[data-tray="0"]').style.backgroundColor = trays[0].color;
+            document.querySelector('[data-tray="0"]').classList.toggle('is-light', lightOrDark(trays[0].color) === 'light');
+            document.querySelector('[data-tray="0"]').classList.toggle('is-active', trayLoadedId === trays[0].id);
+            document.querySelector('[data-tray="0"] > .type').innerText = trays[0].type ?? '';
+
+            document.querySelector('[data-tray="1"]').style.backgroundColor = trays[1].color;
+            document.querySelector('[data-tray="1"]').classList.toggle('is-light', lightOrDark(trays[1].color) === 'light');
+            document.querySelector('[data-tray="1"]').classList.toggle('is-active', trayLoadedId === trays[1].id);
+            document.querySelector('[data-tray="1"] > .type').innerText = trays[1].type ?? '';
+
+            document.querySelector('[data-tray="2"]').style.backgroundColor = trays[2].color;
+            document.querySelector('[data-tray="2"]').classList.toggle('is-light', lightOrDark(trays[2].color) === 'light');
+            document.querySelector('[data-tray="2"]').classList.toggle('is-active', trayLoadedId === trays[2].id);
+            document.querySelector('[data-tray="2"] > .type').innerText = trays[2].type ?? '';
+
+            document.querySelector('[data-tray="3"]').style.backgroundColor = trays[3].color;
+            document.querySelector('[data-tray="3"]').classList.toggle('is-light', lightOrDark(trays[3].color) === 'light');
+            document.querySelector('[data-tray="3"]').classList.toggle('is-active', trayLoadedId === trays[3].id);
+            document.querySelector('[data-tray="3"] > .type').innerText = trays[3].type ?? '';
+
+            document.querySelector('#sensor-temperature > .text').innerText = `${temperature}°C`;
+            document.querySelector('#sensor-humidity > .text').innerText = `${humidity}`;
+
+            document.getElementById('error').innerText = '';
+          })
+          .catch(err => {
+            console.error(err);
+            document.getElementById('error').innerText = `${err.message}`;
+          })
+          .finally(() => {
+            Homey.ready();
+          });
+      };
+
+      getStatus();
+      setInterval(getStatus, 1000);
+    }
+
+    function lightOrDark(color) {
+
+      // Check the format of the color, HEX or RGB?
+      if (color.match(/^rgb/)) {
+
+        // If HEX --> store the red, green, blue values in separate variables
+        color = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/);
+
+        r = color[1];
+        g = color[2];
+        b = color[3];
+      } else {
+
+        // If RGB --> Convert it to HEX: http://gist.github.com/983661
+        color = +("0x" + color.slice(1).replace(
+          color.length < 5 && /./g, '$&$&'
+        )
+        );
+
+        r = color >> 16;
+        g = color >> 8 & 255;
+        b = color & 255;
+      }
+
+      // HSP equation from http://alienryderflex.com/hsp.html
+      hsp = Math.sqrt(
+        0.299 * (r * r) +
+        0.587 * (g * g) +
+        0.114 * (b * b)
+      );
+
+      // Using the HSP value, determine whether the color is light or dark
+      if (hsp > 127.5) {
+        return 'light';
+      } else {
+        return 'dark';
+      }
+    }
+  </script>
+</body>
+
+</html>
