@@ -16,5 +16,8 @@
   },
   "1.2.1": {
     "en": "Fixed a small issue when selecting the AMS before the Device was selected."
+  },
+  "1.2.2": {
+    "en": "Fixed an issue where multiple AMS devices would not show the loaded tray."
   }
 }
