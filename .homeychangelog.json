@@ -10,5 +10,8 @@
   },
   "1.1.0": {
     "en": "Added a setting to connect locally, by entering an IP address."
+  },
+  "1.2.0": {
+    "en": "Added widget for AMS."
   }
 }
