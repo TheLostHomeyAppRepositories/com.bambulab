@@ -202,22 +202,22 @@
           }) => {
             document.querySelector('[data-tray="0"]').style.backgroundColor = trays[0].color;
             document.querySelector('[data-tray="0"]').classList.toggle('is-light', lightOrDark(trays[0].color) === 'light');
-            document.querySelector('[data-tray="0"]').classList.toggle('is-active', trayLoadedId === trays[0].id);
+            document.querySelector('[data-tray="0"]').classList.toggle('is-active', Number(trayLoadedId) === Number(trays[0].id) + Number(amsId) * 4);
             document.querySelector('[data-tray="0"] > .type').innerText = trays[0].type ?? '';
 
             document.querySelector('[data-tray="1"]').style.backgroundColor = trays[1].color;
             document.querySelector('[data-tray="1"]').classList.toggle('is-light', lightOrDark(trays[1].color) === 'light');
-            document.querySelector('[data-tray="1"]').classList.toggle('is-active', trayLoadedId === trays[1].id);
+            document.querySelector('[data-tray="1"]').classList.toggle('is-active', Number(trayLoadedId) === Number(trays[1].id) + Number(amsId) * 4);
             document.querySelector('[data-tray="1"] > .type').innerText = trays[1].type ?? '';
 
             document.querySelector('[data-tray="2"]').style.backgroundColor = trays[2].color;
             document.querySelector('[data-tray="2"]').classList.toggle('is-light', lightOrDark(trays[2].color) === 'light');
-            document.querySelector('[data-tray="2"]').classList.toggle('is-active', trayLoadedId === trays[2].id);
+            document.querySelector('[data-tray="2"]').classList.toggle('is-active', Number(trayLoadedId) === Number(trays[2].id) + Number(amsId) * 4);
             document.querySelector('[data-tray="2"] > .type').innerText = trays[2].type ?? '';
 
             document.querySelector('[data-tray="3"]').style.backgroundColor = trays[3].color;
             document.querySelector('[data-tray="3"]').classList.toggle('is-light', lightOrDark(trays[3].color) === 'light');
-            document.querySelector('[data-tray="3"]').classList.toggle('is-active', trayLoadedId === trays[3].id);
+            document.querySelector('[data-tray="3"]').classList.toggle('is-active', Number(trayLoadedId) === Number(trays[3].id) + Number(amsId) * 4);
             document.querySelector('[data-tray="3"] > .type').innerText = trays[3].type ?? '';
 
             document.querySelector('#sensor-temperature > .text').innerText = `${temperature}°C`;
