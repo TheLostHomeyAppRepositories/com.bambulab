@@ -15,6 +15,22 @@
     {
       "id": "print_state_running",
       "title": "The print has been started or resumed"
+    },
+    {
+      "id": "onoff.light_chamber_true",
+      "title": "The chamber light turned on"
+    },
+    {
+      "id": "onoff.light_chamber_false",
+      "title": "The chamber light turned off"
+    },
+    {
+      "id": "onoff.light_work_true",
+      "title": "The work light turned on"
+    },
+    {
+      "id": "onoff.light_work_false",
+      "title": "The work light turned off"
     }
   ],
   "actions": [

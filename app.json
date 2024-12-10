@@ -82,6 +82,50 @@
             "filter": "driver_id=cloud"
           }
         ]
+      },
+      {
+        "id": "onoff.light_chamber_true",
+        "title": "The chamber light turned on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "onoff.light_chamber_false",
+        "title": "The chamber light turned off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "onoff.light_work_true",
+        "title": "The work light turned on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
+      },
+      {
+        "id": "onoff.light_work_false",
+        "title": "The work light turned off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=cloud"
+          }
+        ]
       }
     ],
     "actions": [
