@@ -19,5 +19,8 @@
   },
   "1.2.2": {
     "en": "Fixed an issue where multiple AMS devices would not show the loaded tray."
+  },
+  "1.3.0": {
+    "en": "Added When-cards for the lights. Force IPv4 connection to Bambu Cloud."
   }
 }
