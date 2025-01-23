@@ -53,6 +53,24 @@
       {
         "id": "print_state_failed",
         "title": "The print has failed",
+        "tokens": [
+          {
+            "name": "print_error",
+            "type": "string",
+            "title": {
+              "en": "Print Error Code"
+            },
+            "example": "50348044"
+          },
+          {
+            "name": "mc_print_error_code",
+            "type": "string",
+            "title": {
+              "en": "MC Print Error Code"
+            },
+            "example": "16396"
+          }
+        ],
         "args": [
           {
             "type": "device",
