@@ -22,5 +22,8 @@
   },
   "1.3.0": {
     "en": "Added When-cards for the lights. Force IPv4 connection to Bambu Cloud."
+  },
+  "1.4.0": {
+    "en": "Fixed an issue where Flow cards would not start. Added error codes to the 'Failed' when-card."
   }
 }
