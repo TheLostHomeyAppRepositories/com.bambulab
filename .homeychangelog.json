@@ -25,5 +25,8 @@
   },
   "1.4.0": {
     "en": "Fixed an issue where Flow cards would not start. Added error codes to the 'Failed' when-card."
+  },
+  "1.4.1": {
+    "en": "Improved stability."
   }
 }
