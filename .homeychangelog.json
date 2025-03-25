@@ -28,5 +28,8 @@
   },
   "1.4.1": {
     "en": "Improved stability."
+  },
+  "1.5.0": {
+    "en": "Improved the reconnection logic."
   }
 }
