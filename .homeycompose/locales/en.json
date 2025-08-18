@@ -93,10 +93,18 @@
           "speed": {
             "title": "Speed",
             "values": {
-              "1": "Silent",
-              "2": "Standard",
-              "3": "Sport",
-              "4": "Ludicrous"
+              "1": {
+                "title": "Silent"
+              },
+              "2": {
+                "title": "Standard"
+              },
+              "3": {
+                "title": "Sport"
+              },
+              "4": {
+                "title": "Ludicrous"
+              }
             }
           }
         }

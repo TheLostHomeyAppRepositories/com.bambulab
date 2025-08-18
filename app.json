@@ -9,12 +9,6 @@
     "local",
     "cloud"
   ],
-  "name": {
-    "en": "Bambu Lab"
-  },
-  "description": {
-    "en": "Unleash Your Creativity with Bambu Lab 3D Printers"
-  },
   "category": [
     "appliances"
   ],
@@ -41,34 +35,35 @@
     "triggers": [
       {
         "id": "print_state_finish",
-        "title": "The print has finished",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "The print has finished"
+        }
       },
       {
         "id": "print_state_failed",
-        "title": "The print has failed",
         "tokens": [
           {
             "name": "print_error",
             "type": "string",
+            "example": "50348044",
             "title": {
               "en": "Print Error Code"
-            },
-            "example": "50348044"
+            }
           },
           {
             "name": "mc_print_error_code",
             "type": "string",
+            "example": "16396",
             "title": {
               "en": "MC Print Error Code"
-            },
-            "example": "16396"
+            }
           }
         ],
         "args": [
@@ -77,135 +72,158 @@
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "The print has failed"
+        }
       },
       {
         "id": "print_state_paused",
-        "title": "The print has been paused",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "The print has been paused"
+        }
       },
       {
         "id": "print_state_running",
-        "title": "The print has been started or resumed",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "The print has been started or resumed"
+        }
       },
       {
         "id": "onoff.light_chamber_true",
-        "title": "The chamber light turned on",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "The chamber light turned on"
+        }
       },
       {
         "id": "onoff.light_chamber_false",
-        "title": "The chamber light turned off",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "The chamber light turned off"
+        }
       },
       {
         "id": "onoff.light_work_true",
-        "title": "The work light turned on",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "The work light turned on"
+        }
       },
       {
         "id": "onoff.light_work_false",
-        "title": "The work light turned off",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "The work light turned off"
+        }
       }
     ],
     "actions": [
       {
         "id": "pause",
-        "title": "Pause",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "Pause"
+        }
       },
       {
         "id": "resume",
-        "title": "Resume",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "Resume"
+        }
       },
       {
         "id": "stop",
-        "title": "Stop",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "Stop"
+        }
       },
       {
         "id": "set_chamber_light_on",
-        "title": "Turn the chamber light on",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "Turn the chamber light on"
+        }
       },
       {
         "id": "set_chamber_light_off",
-        "title": "Turn the chamber light off",
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=cloud"
           }
-        ]
+        ],
+        "title": {
+          "en": "Turn the chamber light off"
+        }
       },
       {
         "id": "set_print_speed",
-        "title": "Set the print speed",
-        "titleFormatted": "Set the print speed to [[speed]]",
         "args": [
           {
             "type": "device",
@@ -214,36 +232,49 @@
           },
           {
             "name": "speed",
-            "title": "Speed",
             "type": "dropdown",
             "values": [
               {
                 "id": "1",
-                "title": "Silent"
+                "title": {
+                  "en": "Silent"
+                }
               },
               {
                 "id": "2",
-                "title": "Standard"
+                "title": {
+                  "en": "Standard"
+                }
               },
               {
                 "id": "3",
-                "title": "Sport"
+                "title": {
+                  "en": "Sport"
+                }
               },
               {
                 "id": "4",
-                "title": "Ludicrous"
+                "title": {
+                  "en": "Ludicrous"
+                }
               }
-            ]
+            ],
+            "title": {
+              "en": "Speed"
+            }
           }
-        ]
+        ],
+        "title": {
+          "en": "Set the print speed"
+        },
+        "titleFormatted": {
+          "en": "Set the print speed to [[speed]]"
+        }
       }
     ]
   },
   "drivers": [
     {
-      "name": {
-        "en": "3D Printer"
-      },
       "class": "other",
       "capabilities": [
         "bambu_print_speed",
@@ -259,9 +290,9 @@
         "cloud"
       ],
       "images": {
-        "small": "/drivers/cloud/assets/images/small.png",
-        "large": "/drivers/cloud/assets/images/large.png",
-        "xlarge": "/drivers/cloud/assets/images/xlarge.png"
+        "small": "{{driverAssetsPath}}/images/small.png",
+        "large": "{{driverAssetsPath}}/images/large.png",
+        "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
       },
       "pair": [
         {
@@ -271,9 +302,13 @@
           "id": "login_code",
           "template": "pincode",
           "options": {
-            "title": "Enter the Pincode",
-            "hint": "A pincode has been sent to your email.",
-            "length": 6
+            "length": 6,
+            "title": {
+              "en": "Enter the Pincode"
+            },
+            "hint": {
+              "en": "A pincode has been sent to your email."
+            }
           }
         },
         {
@@ -296,9 +331,13 @@
           "id": "login_code",
           "template": "pincode",
           "options": {
-            "title": "Enter the Pincode",
-            "hint": "A pincode has been sent to your email.",
-            "length": 6
+            "length": 6,
+            "title": {
+              "en": "Enter the Pincode"
+            },
+            "hint": {
+              "en": "A pincode has been sent to your email."
+            }
           }
         }
       ],
@@ -307,18 +346,26 @@
         {
           "id": "hostname",
           "type": "text",
-          "label": "IP Address",
           "value": "",
-          "hint": "Local IP address of the printer. When set, this will be used instead of a cloud connection.",
-          "placeholder": "192.168.0.123"
+          "placeholder": "192.168.0.123",
+          "label": {
+            "en": "IP Address"
+          },
+          "hint": {
+            "en": "Local IP address of the printer. When set, this will be used instead of a cloud connection."
+          }
         },
         {
           "id": "accessCode",
           "type": "text",
           "value": "",
-          "label": "Access Code",
-          "hint": "The printer's Access Code. This is only used when a Local IP Address is entered.",
-          "placeholder": "a1b2c3d4"
+          "placeholder": "a1b2c3d4",
+          "label": {
+            "en": "Access Code"
+          },
+          "hint": {
+            "en": "The printer's Access Code. This is only used when a Local IP Address is entered."
+          }
         },
         {
           "id": "deviceId",
@@ -338,14 +385,14 @@
           "label": "Product Name",
           "value": "n/a"
         }
-      ]
+      ],
+      "name": {
+        "en": "3D Printer"
+      }
     }
   ],
   "widgets": {
     "ams": {
-      "name": {
-        "en": "AMS"
-      },
       "height": 170,
       "settings": [
         {
@@ -369,12 +416,12 @@
           "path": "/status"
         }
       },
-      "id": "ams"
+      "id": "ams",
+      "name": {
+        "en": "AMS"
+      }
     },
     "status": {
-      "name": {
-        "en": "3D Printer Status"
-      },
       "height": 202,
       "settings": [
         {
@@ -415,7 +462,10 @@
           "path": "/control/print_speed"
         }
       },
-      "id": "status"
+      "id": "status",
+      "name": {
+        "en": "3D Printer Status"
+      }
     }
   },
   "capabilities": {
@@ -468,5 +518,11 @@
       "title": "Time Remaining",
       "icon": "/assets/icons/bambu_progress_time_remaining.svg"
     }
+  },
+  "name": {
+    "en": "Bambu Lab"
+  },
+  "description": {
+    "en": "Unleash Your Creativity with Bambu Lab 3D Printers"
   }
 }
