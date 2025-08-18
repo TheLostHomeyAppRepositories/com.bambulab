@@ -1,0 +1,135 @@
+{
+  "$app": {
+    "name": "Bambu Lab",
+    "description": "Ontketen je creativiteit met Bambu Lab 3D-printers"
+  },
+  "$drivers": {
+    "cloud": {
+      "name": "3D-printer",
+      "pair": {
+        "login_code": {
+          "options": {
+            "title": "Voer de pincode in",
+            "hint": "Er is een pincode naar je e-mail gestuurd."
+          }
+        }
+      },
+      "repair": {
+        "login_code": {
+          "options": {
+            "title": "Voer de pincode in",
+            "hint": "Er is een pincode naar je e-mail gestuurd."
+          }
+        }
+      },
+      "settings": {
+        "hostname": {
+          "label": "IP-adres",
+          "hint": "Lokaal IP-adres van de printer. Indien ingesteld, wordt deze gebruikt in plaats van een cloudverbinding."
+        },
+        "accessCode": {
+          "label": "Toegangscode",
+          "hint": "De toegangscode van de printer. Dit wordt alleen gebruikt wanneer een lokaal IP-adres is ingevoerd."
+        }
+      }
+    }
+  },
+  "$flow": {
+    "triggers": {
+      "print_state_finish": {
+        "title": "De print is voltooid"
+      },
+      "print_state_failed": {
+        "title": "De print is mislukt",
+        "tokens": {
+          "print_error": {
+            "title": "Printfoutcode"
+          },
+          "mc_print_error_code": {
+            "title": "MC printfoutcode"
+          }
+        }
+      },
+      "print_state_paused": {
+        "title": "De print is gepauzeerd"
+      },
+      "print_state_running": {
+        "title": "De print is gestart of hervat"
+      },
+      "onoff.light_chamber_true": {
+        "title": "De kamerlicht is ingeschakeld"
+      },
+      "onoff.light_chamber_false": {
+        "title": "De kamerlicht is uitgeschakeld"
+      },
+      "onoff.light_work_true": {
+        "title": "Het werklicht is ingeschakeld"
+      },
+      "onoff.light_work_false": {
+        "title": "Het werklicht is uitgeschakeld"
+      }
+    },
+    "conditions": {},
+    "actions": {
+      "pause": {
+        "title": "Pauzeren"
+      },
+      "resume": {
+        "title": "Hervatten"
+      },
+      "stop": {
+        "title": "Stoppen"
+      },
+      "set_chamber_light_on": {
+        "title": "Schakel het kamerlicht in"
+      },
+      "set_chamber_light_off": {
+        "title": "Schakel het kamerlicht uit"
+      },
+      "set_print_speed": {
+        "title": "Stel de printsnelheid in",
+        "titleFormatted": "Stel de printsnelheid in op [[speed]]",
+        "args": {
+          "speed": {
+            "title": "Snelheid",
+            "values": {
+              "1": {
+                "title": "Stil"
+              },
+              "2": {
+                "title": "Standaard"
+              },
+              "3": {
+                "title": "Sport"
+              },
+              "4": {
+                "title": "Ludicrous"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$widgets": {
+    "ams": {
+      "name": "AMS",
+      "settings": {
+        "device": {
+          "title": "Apparaat"
+        },
+        "ams": {
+          "title": "AMS"
+        }
+      }
+    },
+    "status": {
+      "name": "3D-printerstatus",
+      "settings": {
+        "device": {
+          "title": "Apparaat"
+        }
+      }
+    }
+  }
+}

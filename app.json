@@ -43,7 +43,8 @@
           }
         ],
         "title": {
-          "en": "The print has finished"
+          "en": "The print has finished",
+          "nl": "De print is voltooid"
         }
       },
       {
@@ -54,7 +55,8 @@
             "type": "string",
             "example": "50348044",
             "title": {
-              "en": "Print Error Code"
+              "en": "Print Error Code",
+              "nl": "Printfoutcode"
             }
           },
           {
@@ -62,7 +64,8 @@
             "type": "string",
             "example": "16396",
             "title": {
-              "en": "MC Print Error Code"
+              "en": "MC Print Error Code",
+              "nl": "MC printfoutcode"
             }
           }
         ],
@@ -74,7 +77,8 @@
           }
         ],
         "title": {
-          "en": "The print has failed"
+          "en": "The print has failed",
+          "nl": "De print is mislukt"
         }
       },
       {
@@ -87,7 +91,8 @@
           }
         ],
         "title": {
-          "en": "The print has been paused"
+          "en": "The print has been paused",
+          "nl": "De print is gepauzeerd"
         }
       },
       {
@@ -100,7 +105,8 @@
           }
         ],
         "title": {
-          "en": "The print has been started or resumed"
+          "en": "The print has been started or resumed",
+          "nl": "De print is gestart of hervat"
         }
       },
       {
@@ -113,7 +119,8 @@
           }
         ],
         "title": {
-          "en": "The chamber light turned on"
+          "en": "The chamber light turned on",
+          "nl": "De kamerlicht is ingeschakeld"
         }
       },
       {
@@ -126,7 +133,8 @@
           }
         ],
         "title": {
-          "en": "The chamber light turned off"
+          "en": "The chamber light turned off",
+          "nl": "De kamerlicht is uitgeschakeld"
         }
       },
       {
@@ -139,7 +147,8 @@
           }
         ],
         "title": {
-          "en": "The work light turned on"
+          "en": "The work light turned on",
+          "nl": "Het werklicht is ingeschakeld"
         }
       },
       {
@@ -152,7 +161,8 @@
           }
         ],
         "title": {
-          "en": "The work light turned off"
+          "en": "The work light turned off",
+          "nl": "Het werklicht is uitgeschakeld"
         }
       }
     ],
@@ -167,7 +177,8 @@
           }
         ],
         "title": {
-          "en": "Pause"
+          "en": "Pause",
+          "nl": "Pauzeren"
         }
       },
       {
@@ -180,7 +191,8 @@
           }
         ],
         "title": {
-          "en": "Resume"
+          "en": "Resume",
+          "nl": "Hervatten"
         }
       },
       {
@@ -193,7 +205,8 @@
           }
         ],
         "title": {
-          "en": "Stop"
+          "en": "Stop",
+          "nl": "Stoppen"
         }
       },
       {
@@ -206,7 +219,8 @@
           }
         ],
         "title": {
-          "en": "Turn the chamber light on"
+          "en": "Turn the chamber light on",
+          "nl": "Schakel het kamerlicht in"
         }
       },
       {
@@ -219,7 +233,8 @@
           }
         ],
         "title": {
-          "en": "Turn the chamber light off"
+          "en": "Turn the chamber light off",
+          "nl": "Schakel het kamerlicht uit"
         }
       },
       {
@@ -237,38 +252,45 @@
               {
                 "id": "1",
                 "title": {
-                  "en": "Silent"
+                  "en": "Silent",
+                  "nl": "Stil"
                 }
               },
               {
                 "id": "2",
                 "title": {
-                  "en": "Standard"
+                  "en": "Standard",
+                  "nl": "Standaard"
                 }
               },
               {
                 "id": "3",
                 "title": {
-                  "en": "Sport"
+                  "en": "Sport",
+                  "nl": "Sport"
                 }
               },
               {
                 "id": "4",
                 "title": {
-                  "en": "Ludicrous"
+                  "en": "Ludicrous",
+                  "nl": "Ludicrous"
                 }
               }
             ],
             "title": {
-              "en": "Speed"
+              "en": "Speed",
+              "nl": "Snelheid"
             }
           }
         ],
         "title": {
-          "en": "Set the print speed"
+          "en": "Set the print speed",
+          "nl": "Stel de printsnelheid in"
         },
         "titleFormatted": {
-          "en": "Set the print speed to [[speed]]"
+          "en": "Set the print speed to [[speed]]",
+          "nl": "Stel de printsnelheid in op [[speed]]"
         }
       }
     ]
@@ -290,9 +312,9 @@
         "cloud"
       ],
       "images": {
-        "small": "{{driverAssetsPath}}/images/small.png",
-        "large": "{{driverAssetsPath}}/images/large.png",
-        "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+        "small": "/drivers/cloud/assets/images/small.png",
+        "large": "/drivers/cloud/assets/images/large.png",
+        "xlarge": "/drivers/cloud/assets/images/xlarge.png"
       },
       "pair": [
         {
@@ -304,10 +326,12 @@
           "options": {
             "length": 6,
             "title": {
-              "en": "Enter the Pincode"
+              "en": "Enter the Pincode",
+              "nl": "Voer de pincode in"
             },
             "hint": {
-              "en": "A pincode has been sent to your email."
+              "en": "A pincode has been sent to your email.",
+              "nl": "Er is een pincode naar je e-mail gestuurd."
             }
           }
         },
@@ -333,10 +357,12 @@
           "options": {
             "length": 6,
             "title": {
-              "en": "Enter the Pincode"
+              "en": "Enter the Pincode",
+              "nl": "Voer de pincode in"
             },
             "hint": {
-              "en": "A pincode has been sent to your email."
+              "en": "A pincode has been sent to your email.",
+              "nl": "Er is een pincode naar je e-mail gestuurd."
             }
           }
         }
@@ -349,10 +375,12 @@
           "value": "",
           "placeholder": "192.168.0.123",
           "label": {
-            "en": "IP Address"
+            "en": "IP Address",
+            "nl": "IP-adres"
           },
           "hint": {
-            "en": "Local IP address of the printer. When set, this will be used instead of a cloud connection."
+            "en": "Local IP address of the printer. When set, this will be used instead of a cloud connection.",
+            "nl": "Lokaal IP-adres van de printer. Indien ingesteld, wordt deze gebruikt in plaats van een cloudverbinding."
           }
         },
         {
@@ -361,10 +389,12 @@
           "value": "",
           "placeholder": "a1b2c3d4",
           "label": {
-            "en": "Access Code"
+            "en": "Access Code",
+            "nl": "Toegangscode"
           },
           "hint": {
-            "en": "The printer's Access Code. This is only used when a Local IP Address is entered."
+            "en": "The printer's Access Code. This is only used when a Local IP Address is entered.",
+            "nl": "De toegangscode van de printer. Dit wordt alleen gebruikt wanneer een lokaal IP-adres is ingevoerd."
           }
         },
         {
@@ -387,7 +417,8 @@
         }
       ],
       "name": {
-        "en": "3D Printer"
+        "en": "3D Printer",
+        "nl": "3D-printer"
       }
     }
   ],
@@ -399,14 +430,16 @@
           "id": "device",
           "type": "autocomplete",
           "title": {
-            "en": "Device"
+            "en": "Device",
+            "nl": "Apparaat"
           }
         },
         {
           "id": "ams",
           "type": "autocomplete",
           "title": {
-            "en": "AMS"
+            "en": "AMS",
+            "nl": "AMS"
           }
         }
       ],
@@ -418,7 +451,8 @@
       },
       "id": "ams",
       "name": {
-        "en": "AMS"
+        "en": "AMS",
+        "nl": "AMS"
       }
     },
     "status": {
@@ -428,7 +462,8 @@
           "id": "device",
           "type": "autocomplete",
           "title": {
-            "en": "Device"
+            "en": "Device",
+            "nl": "Apparaat"
           }
         }
       ],
@@ -464,7 +499,8 @@
       },
       "id": "status",
       "name": {
-        "en": "3D Printer Status"
+        "en": "3D Printer Status",
+        "nl": "3D-printerstatus"
       }
     }
   },
@@ -520,9 +556,11 @@
     }
   },
   "name": {
-    "en": "Bambu Lab"
+    "en": "Bambu Lab",
+    "nl": "Bambu Lab"
   },
   "description": {
-    "en": "Unleash Your Creativity with Bambu Lab 3D Printers"
+    "en": "Unleash Your Creativity with Bambu Lab 3D Printers",
+    "nl": "Ontketen je creativiteit met Bambu Lab 3D-printers"
   }
 }
