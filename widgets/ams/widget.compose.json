@@ -1,22 +1,13 @@
 {
-  "name": {
-    "en": "AMS"
-  },
   "height": 170,
   "settings": [
     {
       "id": "device",
-      "type": "autocomplete",
-      "title": {
-        "en": "Device"
-      }
+      "type": "autocomplete"
     },
     {
       "id": "ams",
-      "type": "autocomplete",
-      "title": {
-        "en": "AMS"
-      }
+      "type": "autocomplete"
     }
   ],
   "api": {

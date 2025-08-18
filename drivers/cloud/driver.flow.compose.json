@@ -1,105 +1,79 @@
 {
   "triggers": [
     {
-      "id": "print_state_finish",
-      "title": "The print has finished"
+      "id": "print_state_finish"
     },
     {
       "id": "print_state_failed",
-      "title": "The print has failed",
       "tokens": [
         {
           "name": "print_error",
           "type": "string",
-          "title": {
-            "en": "Print Error Code"
-          },
           "example": "50348044"
         },
         {
           "name": "mc_print_error_code",
           "type": "string",
-          "title": {
-            "en": "MC Print Error Code"
-          },
           "example": "16396"
         }
       ]
     },
     {
-      "id": "print_state_paused",
-      "title": "The print has been paused"
+      "id": "print_state_paused"
     },
     {
-      "id": "print_state_running",
-      "title": "The print has been started or resumed"
+      "id": "print_state_running"
     },
     {
-      "id": "onoff.light_chamber_true",
-      "title": "The chamber light turned on"
+      "id": "onoff.light_chamber_true"
     },
     {
-      "id": "onoff.light_chamber_false",
-      "title": "The chamber light turned off"
+      "id": "onoff.light_chamber_false"
     },
     {
-      "id": "onoff.light_work_true",
-      "title": "The work light turned on"
+      "id": "onoff.light_work_true"
     },
     {
-      "id": "onoff.light_work_false",
-      "title": "The work light turned off"
+      "id": "onoff.light_work_false"
     }
   ],
   "actions": [
     {
-      "id": "pause",
-      "title": "Pause"
+      "id": "pause"
     },
     {
-      "id": "resume",
-      "title": "Resume"
+      "id": "resume"
     },
     {
-      "id": "stop",
-      "title": "Stop"
+      "id": "stop"
     },
     {
-      "id": "set_chamber_light_on",
-      "title": "Turn the chamber light on"
+      "id": "set_chamber_light_on"
     },
     {
-      "id": "set_chamber_light_off",
-      "title": "Turn the chamber light off"
+      "id": "set_chamber_light_off"
     },
     {
       "id": "set_print_speed",
-      "title": "Set the print speed",
-      "titleFormatted": "Set the print speed to [[speed]]",
       "$filter": {
         "capabilities": "bambu_print_speed"
       },
       "args": [
         {
           "name": "speed",
-          "title": "Speed",
           "type": "dropdown",
           "values": [
             {
-              "id": "1",
-              "title": "Silent"
+              "id": "1"
             },
             {
-              "id": "2",
-              "title": "Standard"
+              "id": "2"
             },
             {
-              "id": "3",
-              "title": "Sport"
+              "id": "3"
             },
             {
-              "id": "4",
-              "title": "Ludicrous"
+              "id": "4"
             }
           ]
         }

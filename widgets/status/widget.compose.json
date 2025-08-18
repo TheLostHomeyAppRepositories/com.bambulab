@@ -1,15 +1,9 @@
 {
-  "name": {
-    "en": "3D Printer Status"
-  },
   "height": 202,
   "settings": [
     {
       "id": "device",
-      "type": "autocomplete",
-      "title": {
-        "en": "Device"
-      }
+      "type": "autocomplete"
     }
   ],
   "api": {

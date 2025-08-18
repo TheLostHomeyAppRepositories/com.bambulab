@@ -1,0 +1,127 @@
+{
+  "$app": {
+    "name": "Bambu Lab",
+    "description": "Unleash Your Creativity with Bambu Lab 3D Printers"
+  },
+  "$drivers": {
+    "cloud": {
+      "name": "3D Printer",
+      "pair": {
+        "login_code": {
+          "options": {
+            "title": "Enter the Pincode",
+            "hint": "A pincode has been sent to your email."
+          }
+        }
+      },
+      "repair": {
+        "login_code": {
+          "options": {
+            "title": "Enter the Pincode",
+            "hint": "A pincode has been sent to your email."
+          }
+        }
+      },
+      "settings": {
+        "hostname": {
+          "label": "IP Address",
+          "hint": "Local IP address of the printer. When set, this will be used instead of a cloud connection."
+        },
+        "accessCode": {
+          "label": "Access Code",
+          "hint": "The printer's Access Code. This is only used when a Local IP Address is entered."
+        }
+      }
+    }
+  },
+  "$flow": {
+    "triggers": {
+      "print_state_finish": {
+        "title": "The print has finished"
+      },
+      "print_state_failed": {
+        "title": "The print has failed",
+        "tokens": {
+          "print_error": {
+            "title": "Print Error Code"
+          },
+          "mc_print_error_code": {
+            "title": "MC Print Error Code"
+          }
+        }
+      },
+      "print_state_paused": {
+        "title": "The print has been paused"
+      },
+      "print_state_running": {
+        "title": "The print has been started or resumed"
+      },
+      "onoff.light_chamber_true": {
+        "title": "The chamber light turned on"
+      },
+      "onoff.light_chamber_false": {
+        "title": "The chamber light turned off"
+      },
+      "onoff.light_work_true": {
+        "title": "The work light turned on"
+      },
+      "onoff.light_work_false": {
+        "title": "The work light turned off"
+      }
+    },
+    "conditions": {},
+    "actions": {
+      "pause": {
+        "title": "Pause"
+      },
+      "resume": {
+        "title": "Resume"
+      },
+      "stop": {
+        "title": "Stop"
+      },
+      "set_chamber_light_on": {
+        "title": "Turn the chamber light on"
+      },
+      "set_chamber_light_off": {
+        "title": "Turn the chamber light off"
+      },
+      "set_print_speed": {
+        "title": "Set the print speed",
+        "titleFormatted": "Set the print speed to [[speed]]",
+        "args": {
+          "speed": {
+            "title": "Speed",
+            "values": {
+              "1": "Silent",
+              "2": "Standard",
+              "3": "Sport",
+              "4": "Ludicrous"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$widgets": {
+    "ams": {
+      "name": "AMS",
+      "settings": {
+        "device": {
+          "title": "Device"
+        },
+        "ams": {
+          "title": "AMS"
+        }
+      }
+    },
+    "status": {
+      "name": "3D Printer Status",
+      "settings": {
+        "device": {
+          "title": "Device"
+        }
+      }
+    }
+  }
+}

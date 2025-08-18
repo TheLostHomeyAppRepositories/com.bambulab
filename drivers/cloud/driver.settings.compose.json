@@ -2,17 +2,13 @@
   {
     "id": "hostname",
     "type": "text",
-    "label": "IP Address",
     "value": "",
-    "hint": "Local IP address of the printer. When set, this will be used instead of a cloud connection.",
     "placeholder": "192.168.0.123"
   },
   {
     "id": "accessCode",
     "type": "text",
     "value": "",
-    "label": "Access Code",
-    "hint": "The printer's Access Code. This is only used when a Local IP Address is entered.",
     "placeholder": "a1b2c3d4"
   },
   {
